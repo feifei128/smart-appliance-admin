@@ -44,13 +44,13 @@ export default {
     res.send({
       success: true,
       data: {
-        name: 'fifi',
+        name: 'lififi',
         avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
         userid: '00000001',
-        email: 'lififi@gmail.com',
-        signature: '海纳百川，有容乃大',
-        title: '交互专家',
-        group: '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
+        email: 'lififi57@gmail.com',
+        signature: '学习技术~',
+        title: '前端小白',
+        group: '中国地质大学（武汉）-- 计算机学院 ',
         tags: [
           {
             key: '0',
@@ -120,7 +120,7 @@ export default {
   'POST /api/login/account': async (req: Request, res: Response) => {
     const { password, username, type } = req.body;
     await waitTime(2000);
-    if (password === 'ant.design' && username === 'admin') {
+    if (password === '123456' && username === 'admin') {
       res.send({
         status: 'ok',
         type,
@@ -129,7 +129,7 @@ export default {
       access = 'admin';
       return;
     }
-    if (password === 'ant.design' && username === 'user') {
+    if (password === '123456' && username === 'user') {
       res.send({
         status: 'ok',
         type,

@@ -29,28 +29,47 @@ export default [
     component: './Welcome',
   },
   {
-    path: '/admin',
-    name: 'admin',
+    path: '/user-manage',
+    name: 'user-manage',
     icon: 'crown',
-    access: 'canAdmin',
     routes: [
       {
-        path: '/admin',
-        redirect: '/admin/sub-page',
-      },
-      {
-        path: '/admin/sub-page',
-        name: 'sub-page',
+        path: 'list',
+        name: 'list',
         component: './Admin',
       },
     ],
   },
   {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
+    path: '/employee-manage',
+    name: 'employee-manage',
+    icon: 'crown',
+    routes: [
+      {
+        path: 'list',
+        name: 'list',
+        component: './Admin',
+      },
+      {
+        path: 'performance',
+        name: 'performance',
+        component: './Admin',
+      },
+    ],
   },
+  {
+    path: '/order-manage',
+    name: 'order-manage',
+    icon: 'crown',
+    routes: [
+      {
+        path: 'list',
+        name: 'list',
+        component: './TableList',
+      },
+    ],
+  },
+
   {
     path: '/',
     redirect: '/welcome',

@@ -1,5 +1,12 @@
 export default {
-  'menu.welcome': '欢迎',
+  'menu.user-manage': '客户管理',
+  'menu.user-manage.list': '客户信息',
+  'menu.employee-manage': '员工管理',
+  'menu.employee-manage.list': '员工信息',
+  'menu.employee-manage.performance': '员工业绩',
+  'menu.order-manage': '订单管理',
+  'menu.order-manage.list': '订单信息',
+  'menu.welcome': 'xxx 店务管理系统',
   'menu.more-blocks': '更多区块',
   'menu.home': '首页',
   'menu.admin': '管理员',
