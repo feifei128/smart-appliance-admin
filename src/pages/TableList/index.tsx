@@ -144,7 +144,7 @@ const TableList: React.FC = () => {
       ),
       dataIndex: 'callNo',
       sorter: true,
-      hideInForm: true,
+      // hideInForm: true,
       renderText: (val: string) =>
         `${val}${intl.formatMessage({
           id: 'pages.searchTable.tenThousand',
@@ -156,7 +156,7 @@ const TableList: React.FC = () => {
       dataIndex: 'status',
       hideInForm: true,
       valueEnum: {
-        0: {
+        0: { // 关闭
           text: (
             <FormattedMessage
               id="pages.searchTable.nameStatus.default"
@@ -165,19 +165,19 @@ const TableList: React.FC = () => {
           ),
           status: 'Default',
         },
-        1: {
-          text: (
+        1: {  // 运行中
+          text: ( 
             <FormattedMessage id="pages.searchTable.nameStatus.running" defaultMessage="Running" />
           ),
           status: 'Processing',
         },
-        2: {
+        2: { // 已上线
           text: (
             <FormattedMessage id="pages.searchTable.nameStatus.online" defaultMessage="Online" />
           ),
           status: 'Success',
         },
-        3: {
+        3: {  // 异常
           text: (
             <FormattedMessage
               id="pages.searchTable.nameStatus.abnormal"

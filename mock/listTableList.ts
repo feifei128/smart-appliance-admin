@@ -16,7 +16,7 @@ const genList = (current: number, pageSize: number) => {
         'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
         'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
       ][i % 2],
-      name: `TradeCode ${index}`,
+      name: `用户 ${index}`,
       owner: '曲丽丽',
       desc: '这是一段描述',
       callNo: Math.floor(Math.random() * 1000),
