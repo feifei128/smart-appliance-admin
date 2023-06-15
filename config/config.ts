@@ -140,7 +140,7 @@ export default defineConfig({
       // 或者使用在线的版本
       // schemaPath: "https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json"
       schemaPath: join(__dirname, 'oneapi.json'),
-      mock: false,
+      mock: true,
     },
     {
       requestLibPath: "import { request } from '@umijs/max'",
@@ -152,4 +152,8 @@ export default defineConfig({
     strategy: 'normal',
   },
   requestRecord: {},
+  alias: {
+    '@': require('path').resolve(__dirname, 'src'),
+    '@mock': require('path').resolve(__dirname, '../mock'),
+  },
 });

@@ -36,7 +36,7 @@ export default [
       {
         path: 'list',
         name: 'list',
-        component: './Admin',
+        component: './Client',
       },
     ],
   },
