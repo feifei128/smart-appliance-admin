@@ -69,7 +69,23 @@ export default [
       },
     ],
   },
-
+  {
+    path: '/finance-manage',
+    name: 'finance-manage',
+    icon: 'crown',
+    routes: [
+      {
+        path: 'wage',
+        name: 'wage',
+        component: './TableList',
+      },
+      {
+        path: 'income',
+        name: 'income',
+        component: './TableList',
+      },
+    ],
+  },
   {
     path: '/',
     redirect: '/welcome',
