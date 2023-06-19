@@ -29,14 +29,20 @@ export default [
     component: './Welcome',
   },
   {
-    path: '/user-manage',
-    name: 'user-manage',
+    path: '/client-manage',
+    name: 'client-manage',
     icon: 'crown',
     routes: [
       {
         path: 'list',
         name: 'list',
         component: './Client',
+      },
+      {
+        path: 'detail/:id',
+        name: 'detail',
+        component: './Client/detail',
+        hideInMenu: true,
       },
     ],
   },
@@ -48,7 +54,13 @@ export default [
       {
         path: 'list',
         name: 'list',
-        component: './Admin',
+        component: './Employee',
+      },
+      {
+        path: 'detail/:id',
+        name: 'detail',
+        component: './Employee/detail',
+        hideInMenu: true,
       },
       {
         path: 'performance',
