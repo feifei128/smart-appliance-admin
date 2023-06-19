@@ -111,7 +111,7 @@ const EmployeeList: React.FC = () => {
       render(val, record, index, action) {
         return (
           <>
-            <Link to={`/employee-manage/detail/${record.id}`}>考勤</Link>
+            <Link to={`/employee-manage/attendance/${record.id}`}>考勤</Link>
             <Popconfirm
               title="请确认"
               description={

@@ -4,7 +4,7 @@ export default {
   'menu.client-manage.detail': '客户详情',
   'menu.employee-manage': '员工管理',
   'menu.employee-manage.list': '员工信息',
-  'menu.employee-manage.detail': '员工考勤',
+  'menu.employee-manage.attendance': '员工考勤',
   'menu.employee-manage.performance': '员工业绩',
   'menu.order-manage': '订单管理',
   'menu.order-manage.list': '订单信息',

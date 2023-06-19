@@ -11,6 +11,7 @@ const employees = mockjs.mock({
     {
       'id|+1': 10001,
       name: '@cname',
+      avatar: '@image("100x100", "@color", "@name")',
       age: '@integer(22, 50)',
       gender: '@pick(["男", "女"])',
       birthday: '@date("yyyy-MM-dd")',
@@ -29,6 +30,10 @@ const employees = mockjs.mock({
           signOut: '@pick(["22:00:00", "21:04:33", "19:27:08", "18:35:40", "20:32:01"])',
         },
       ],
+      processing: '@float(50, 100, 2)',
+      solving: '@float(50, 100, 2)',
+      workHours: '@float(6, 12, 1)',
+      kpi: '@float(1, 2, 2)',
     },
   ],
 }).list;
