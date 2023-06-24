@@ -85,48 +85,35 @@ const ClientList: React.FC = () => {
       dataIndex: 'status',
       search: false,
     },
-    {
-      title: '操作',
-      dataIndex: 'option',
-      search: false,
-      render(val, record) {
-        return (
-          <>
-            <Popconfirm
-              title="请确认"
-              description={
-                record.status === "停用" ?
-                  "确认要启用该客户吗？" :
-                  "确认要禁用该客户吗？"
-              }
-              onConfirm={() => {
-                setIsModalOpen(true);
-              }}
-              okText="Yes"
-              cancelText="No"
-            >
-              <Button type="link">
-                {record.status === "停用" ? "启用" : "禁用"}
-              </Button>
-            </Popconfirm>
-          </>
-        )
-      }
-    },
+    // {
+    //   title: '操作',
+    //   dataIndex: 'option',
+    //   search: false,
+    //   render(val, record) {
+    //     return (
+    //       <>
+    //         <Popconfirm
+    //           title="请确认"
+    //           description={
+    //             record.status === "停用" ?
+    //               "确认要启用该客户吗？" :
+    //               "确认要禁用该客户吗？"
+    //           }
+    //           onConfirm={() => {
+    //             setIsModalOpen(true);
+    //           }}
+    //           okText="Yes"
+    //           cancelText="No"
+    //         >
+    //           <Button type="link">
+    //             {record.status === "停用" ? "启用" : "禁用"}
+    //           </Button>
+    //         </Popconfirm>
+    //       </>
+    //     )
+    //   }
+    // },
   ];
-  useEffect(() => {
-    if (!isModalOpen) return;
-    let timer = null;
-    if (remainingTime > 0) {
-      timer = setInterval(() => {
-        setRemainingTime((time) => time - 1);
-      }, 1000);
-    } else if (remainingTime === 0) {
-      setIsModalOpen(false);
-      setRemainingTime(3);
-    }
-    return () => clearInterval(timer);
-  }, [isModalOpen, remainingTime]);
   return (
     <>
       <ProTable<Client>

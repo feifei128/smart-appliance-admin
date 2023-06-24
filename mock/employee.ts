@@ -1,10 +1,6 @@
 import { Request, Response } from 'express';
 import mockjs from 'mockjs';
 
-
-const departments = ['研发部', '市场部', '销售部', '客服部', '财务部', '人事部'];
-const positions = ['软件工程师', '硬件工程师', '测试工程师', '市场专员', '销售代表', '客服代表', '财务专员', '人事专员'];
-
 // 生成员工记录的模拟数据
 const employees = mockjs.mock({
   'list|50': [

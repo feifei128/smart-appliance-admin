@@ -12,6 +12,12 @@
  */
 export default [
   {
+    path: '/workplace',
+    name: 'workplace',
+    icon: 'smile',
+    component: './Workplace',
+  },
+  {
     path: '/user',
     layout: false,
     routes: [
@@ -21,12 +27,6 @@ export default [
         component: './User/Login',
       },
     ],
-  },
-  {
-    path: '/welcome',
-    name: 'welcome',
-    icon: 'smile',
-    component: './Welcome',
   },
   {
     path: '/client-manage',
@@ -77,30 +77,25 @@ export default [
       {
         path: 'list',
         name: 'list',
-        component: './TableList',
+        component: './Order',
       },
     ],
   },
   {
-    path: '/finance-manage',
-    name: 'finance-manage',
+    path: '/device-manage',
+    name: 'device-manage',
     icon: 'crown',
     routes: [
       {
-        path: 'wage',
-        name: 'wage',
-        component: './TableList',
-      },
-      {
-        path: 'income',
-        name: 'income',
-        component: './TableList',
+        path: 'list',
+        name: 'list',
+        component: './Device',
       },
     ],
   },
   {
     path: '/',
-    redirect: '/welcome',
+    redirect: './Workplace',
   },
   {
     path: '*',

@@ -126,7 +126,7 @@ const EmployeeList: React.FC = () => {
               cancelText="No"
             >
               <Button type="link">
-                {record.status === "停用" ? "启用" : "禁用"}
+                {record.status === "离职" ? "启用" : "禁用"}
               </Button>
             </Popconfirm>
           </>
@@ -183,6 +183,14 @@ const EmployeeList: React.FC = () => {
             <PlusOutlined /> <FormattedMessage id="pages.searchTable.new" defaultMessage="New" />
           </Button>,
         ]}
+        onRow={(record) => {
+          return {
+            style: {
+              background: record.status !== '在职' ? '#fafafa' : '',
+              color: record.status !== '在职' ? 'gray' : '',
+            },
+          };
+        }}
       />
       <Modal
         title="提示"

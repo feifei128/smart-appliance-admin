@@ -81,7 +81,7 @@ export const BasicList: FC = () => {
                             pagination={{
                                 showSizeChanger: true,
                                 showQuickJumper: true,
-                                pageSize: 5,
+                                pageSize: 10,
                                 total: list.length
                             }}
                         />
