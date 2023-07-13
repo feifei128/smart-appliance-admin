@@ -1,4 +1,4 @@
-import { request } from '@/.umi/plugin-request/request';
+import { request } from '@umijs/plugin-request/request';
 import { ActionType, DrawerForm, ProForm, ProFormCascader, ProFormDatePicker, ProFormSelect, ProFormText } from '@ant-design/pro-components';
 import ProTable, { ProColumns } from '@ant-design/pro-table';
 import React, { useRef, useState, useEffect } from 'react';
