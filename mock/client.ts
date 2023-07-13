@@ -1,14 +1,21 @@
 import { Request, Response } from 'express';
 import mockjs from 'mockjs';
 
-
 // 生成客户订单数据
-const products = ['智能音箱', '智能灯泡', '智能插座', '智能门锁', '智能摄像头', '智能电视', '智能冰箱'];
+const products = [
+  '智能音箱',
+  '智能灯泡',
+  '智能插座',
+  '智能门锁',
+  '智能摄像头',
+  '智能电视',
+  '智能冰箱',
+];
 const refundMethods = ['原路返回', '退款到钱包余额', '转账到银行卡'];
 const inquiryStatus = ['已提交', '已回复', '已解决'];
 function generateOrders() {
   const orderStatus = ['已下单', '已付款', '已发货', '已收货', '退货中', '已退款'];
-  const shippingMethods = ['顺丰快递', 'EMS', '圆通快递', '中通快递', '韵达快递', '申通快递',];
+  const shippingMethods = ['顺丰快递', 'EMS', '圆通快递', '中通快递', '韵达快递', '申通快递'];
   const paymentMethods = ['微信支付', '支付宝', '银行转账'];
   const orders = [];
   const count = Math.floor(Math.random() * 5) + 1; // 随机生成 1-5 条订单数据
@@ -117,6 +124,7 @@ export default {
   '/api/clients': (req: Request, res: Response) => {
     const { method } = req;
     if (method === 'GET') {
+      res.setHeader('Access-Control-Allow-Origin', '*'); // 添加响应头
       return res.json(clients);
     } else {
       return res.status(405).send({
@@ -124,5 +132,4 @@ export default {
       });
     }
   },
-
 };

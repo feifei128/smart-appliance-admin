@@ -14,7 +14,8 @@ const orders = mockjs.mock({
       model: '@word(5)', // 型号
       quantity: '@integer(1, 10)', // 数量
       price: '@float(500, 5000, 2, 2)', // 单价，范围为 500-5000 元
-      totalPrice: function () { // 总价
+      totalPrice: function () {
+        // 总价
         return this.quantity * this.price;
       },
       orderTime: '@datetime("yyyy-MM-dd HH:mm:ss")', // 下单时间
@@ -27,7 +28,8 @@ const orders = mockjs.mock({
       paymentTime: '@datetime("yyyy-MM-dd HH:mm:ss")', // 支付时间
       refundReason: '@cparagraph(1)', // 退款原因
       refundTime: '@datetime("yyyy-MM-dd HH:mm:ss")', // 退款时间
-      'comments|0-5': [ // 评论
+      'comments|0-5': [
+        // 评论
         {
           'id|+1': 1,
           content: '@cparagraph(1, 2)',
@@ -40,13 +42,16 @@ const orders = mockjs.mock({
 }).list;
 
 const statistics = mockjs.mock({
-  'list|4': [{ // 日、周、月、年
-    totalAmonut: '@integer(10000, 30000)',
-    visitorsNum: '@integer(300, 10000)',
-    ordersNum: '@integer(80, 500)',
-    Views: '@integer(500, 2000)',
-  }]
-}).list
+  'list|4': [
+    {
+      // 日、周、月、年
+      totalAmonut: '@integer(10000, 30000)',
+      visitorsNum: '@integer(300, 10000)',
+      ordersNum: '@integer(80, 500)',
+      Views: '@integer(500, 2000)',
+    },
+  ],
+}).list;
 
 export default {
   // 订单列表 mock 数据
@@ -64,6 +69,7 @@ export default {
   '/api/statistics': (req: Request, res: Response) => {
     const { method } = req;
     if (method === 'GET') {
+      res.setHeader('Access-Control-Allow-Origin', '*'); // 添加响应头
       return res.json(statistics);
     } else {
       return res.status(405).send({

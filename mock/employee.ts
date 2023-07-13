@@ -12,7 +12,8 @@ const employees = mockjs.mock({
       gender: '@pick(["男", "女"])',
       birthday: '@date("yyyy-MM-dd")',
       department: '@pick(["研发部", "市场部", "销售部", "客服部", "财务部", "人事部"])',
-      position: '@pick(["软件工程师", "硬件工程师", "测试工程师", "市场专员", "销售代表", "客服代表", "财务专员", "人事专员"])',
+      position:
+        '@pick(["软件工程师", "硬件工程师", "测试工程师", "市场专员", "销售代表", "客服代表", "财务专员", "人事专员"])',
       entryDate: '@date("yyyy-MM-dd")',
       phone: /^1[3456789]\d{9}$/,
       email: /\w+@\w+\.\w+/,
@@ -39,6 +40,7 @@ export default {
   '/api/employees': (req: Request, res: Response) => {
     const { method } = req;
     if (method === 'GET') {
+      res.setHeader('Access-Control-Allow-Origin', '*'); // 添加响应头
       return res.json(employees);
     } else {
       return res.status(405).send({
@@ -46,5 +48,4 @@ export default {
       });
     }
   },
-
 };
