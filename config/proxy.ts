@@ -42,9 +42,4 @@ export default {
     },
   },
 
-  '/api': {
-      target: 'https://poetic-khapse-c0c03f.netlify.app',
-      changeOrigin: true,
-      pathRewrite: { '^/api': '' },
-    },
 };
